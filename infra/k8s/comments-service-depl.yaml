@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: comments-service-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: comments-service
+  template:
+    metadata:
+      labels:
+        app: comments-service
+    spec:
+      containers:
+        - name: comments-service
+          image: jchan922/async-microservices-example_comments-service:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: comments-service-srv
+spec:
+  selector:
+    app: comments-service
+  type: ClusterIP
+  ports:
+    - name: comments-service
+      protocol: TCP
+      port: 4001
+      targetPort: 4001
