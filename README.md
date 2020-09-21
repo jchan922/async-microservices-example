@@ -10,3 +10,7 @@
 - cors
 - axios
 - nodemon
+
+### Deployment
+- Docker
+- Kubernetes
