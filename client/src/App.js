@@ -7,7 +7,7 @@ export default () => {
         <div className="container">
             <h1>Blog</h1>
 
-            <h2>Create Post</h2>
+            <h2>Create Post!!!!!!!</h2>
             <PostCreate />
 
             <hr />
